@@ -40,7 +40,7 @@ const Project = ({title,subtitle,image}) =>{
                 <p className="text-2xl font-playfair">{projectTitle}</p>
                 <p className="mt-7">{subtitle}</p>
             </div>
-            <img src={image} alt={projectTitle} />
+            <img width='400px' height='400px' src={image} alt={projectTitle} />
         </motion.div>
     )
 }
