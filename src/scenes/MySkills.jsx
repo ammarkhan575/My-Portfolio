@@ -20,7 +20,7 @@ const MySkills = () => {
                         hidden: { opacity: 0, x: -50 },
                         visible: { opacity: 1, x: 0 }
                     }}>
-                    <p className="font-playfair font-semibold text-8xl mb-5">
+                    <p className="font-playfair font-semibold text-7xl mb-5">
                         MY <span className="text-red">SKILLS</span>
                     </p>
                     <LineGradient width="w-1/3" />

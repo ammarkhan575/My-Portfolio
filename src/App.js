@@ -20,13 +20,14 @@ function App() {
         setIsTopOfPage(true);
         setSelectedPage("home");
       }
-      if(window.scrollY !==0){
+      if(window.scrollY >0){
         setIsTopOfPage(false);
       }
     }
     window.addEventListener("scroll", handleScroll);
-    return window.removeEventListener('scroll', handleScroll);
+    return ()=> window.removeEventListener('scroll', handleScroll);
   },[])
+
 
   return (
     <div className="app bg-deep-blue">

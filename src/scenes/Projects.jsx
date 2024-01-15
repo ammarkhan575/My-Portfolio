@@ -60,7 +60,7 @@ const Projects = () => {
                     visible: { opacity: 1, y: 0 }
                 }}>
                 <div>
-                    <p className="font-playfair font-semibold text-8xl mb-5">
+                    <p className="font-playfair font-semibold text-7xl mb-5">
                         <span className="text-red">PRO</span>JECTS
                     </p>
                     <div className="flex justify-center mt-5">

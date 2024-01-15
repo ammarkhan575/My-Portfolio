@@ -13,6 +13,21 @@ module.exports = {
         "dark-grey": "#757575",
         "opaque-black": "rgba(0,0,0,0.35)",
       },
+      animation: {
+        lightBounce: 'lightBounce 3s ease-in-out infinite',
+        colorPulse: 'colorPulse 2s ease infinite',
+        spinSlow: 'spin 3s linear infinite'
+      },
+      keyframes: {
+        lightBounce: {
+          '0%, 100%': { transform: 'translateY(-10px)' },
+          '50%': { transform: 'translateY(10px)' },
+        },
+        colorPulse:{
+          '0%, 100%':{ filter:'saturate(0%)'},
+          '50%':{ filter:'saturate(100%)'}
+        }
+      },
       backgroundImage: (theme) => ({
         "gradient-rainbow":
           "linear-gradient(81.66deg, #00B5EE 7.21%, #FF45A4 45.05%, #FFBA00 78.07%)",
