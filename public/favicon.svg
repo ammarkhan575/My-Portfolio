@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="MA favicon">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="MA favicon">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#0f766e" />
@@ -6,16 +6,14 @@
     </linearGradient>
   </defs>
 
-  <rect width="64" height="64" rx="16" fill="url(#bg)" />
-  <text
-    x="32"
-    y="39"
-    text-anchor="middle"
-    font-family="Sora, Manrope, Arial, sans-serif"
-    font-size="24"
-    font-weight="800"
-    fill="#ffffff"
-  >
-    MA
-  </text>
+  <rect width="256" height="256" rx="56" fill="url(#bg)" />
+
+  <path
+    d="M34 192V64h30l35 56 35-56h30v128h-29v-82l-28 45h-16l-28-45v82H34z"
+    fill="#fff"
+  />
+  <path
+    d="M148 192l37-128h28l37 128h-29l-6-24h-32l-7 24h-28zm41-49h20l-10-35-10 35z"
+    fill="#fff"
+  />
 </svg>
