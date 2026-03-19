@@ -1,55 +1,82 @@
-import LineGradient from "../components/LineGradient";
 import useMediaQuery from "../hooks/useMediaQuery";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 import SkillsLogo from "../components/SkillsLogo";
 
+const STACK = [
+    "React",
+    "NestJS",
+    "TypeScript",
+    "Go",
+    "AWS",
+    "Redis",
+    "PostgreSQL",
+    "System Design",
+];
+
 const MySkills = () => {
-    const isAboveMediumScreens = useMediaQuery('min-width: 1060px');
+    const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
 
     return (
-        <section id='skills' className="pt-10 pb-24">
-            {/* HEADER AND IMAGE SECTION */}
-            <div className="md:flex md:gap-16 mt-32 md:justify-between md:items-center">
+        <section id="skills" className="py-16 md:py-24">
+            <div className="grid gap-7 md:grid-cols-[1fr_1fr] md:items-center md:gap-10">
                 <motion.div
-                    className="md:w-1/3 "
+                    className="panel p-7 sm:p-8 md:p-10"
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, }}
-                    transiton={{ delay: 0.2, duration: 0.2 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
                     variants={{
-                        hidden: { opacity: 0, x: -50 },
-                        visible: { opacity: 1, x: 0 }
-                    }}>
-                    <p className="font-playfair font-semibold text-7xl mb-5">
-                        MY <span className="text-red">SKILLS</span>
+                        hidden: { opacity: 0, x: -35 },
+                        visible: { opacity: 1, x: 0 },
+                    }}
+                >
+                    <span className="section-kicker">Skills</span>
+
+                    <h2 className="section-title mt-5">
+                        Strong engineering across
+                        <span className="block text-accent">frontend, backend, and cloud</span>
+                    </h2>
+
+                    <p className="section-copy mt-6">
+                        I focus on practical architecture, clean APIs, and product velocity. My
+                        stack is centered around modern TypeScript services, scalable data models,
+                        and robust frontend experiences.
                     </p>
-                    <LineGradient width="w-1/3" />
-                    <p className="mt-10 mb-7">Passionate about leveraging my diverse skill set to create innovative solutions and deliver exceptional results.</p>
+
+                    <div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-3">
+                        {STACK.map((skill) => (
+                            <span
+                                key={skill}
+                                className="rounded-xl border border-line bg-white px-3 py-2 text-sm font-semibold text-slate"
+                            >
+                                {skill}
+                            </span>
+                        ))}
+                    </div>
                 </motion.div>
-                <motion.div 
-                className="mt-16 md:mt-0"
-                initial="hidden"
+
+                <motion.div
+                    className="panel p-6 sm:p-8"
+                    initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, }}
-                    transiton={{ delay: 0.2, duration: 0.2 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.55, delay: 0.1 }}
                     variants={{
-                        hidden: { opacity: 0, x: 50 },
-                        visible: { opacity: 1, x: 0 }
-                    }}>
-                    {isAboveMediumScreens ? (
-                        <div className="relative z-0 ml-20 before:absolute before:-top-10 before:-left-10 before:w-full before:max-w-[400px] before:h-full before:border-2 before:border-blue before:z-[-1]">
-                            {/* <img src={skills} alt="skills" className="z-10" /> */}
-                            <SkillsLogo/>
-                        </div>)
-                        :
-                        (
-                            <SkillsLogo/>
-                        )
-                    }
+                        hidden: { opacity: 0, x: 35 },
+                        visible: { opacity: 1, x: 0 },
+                    }}
+                >
+                    <div
+                        className={`mx-auto w-fit rounded-[2rem] border border-line bg-white px-3 py-4 sm:px-6 sm:py-7 ${
+                            isAboveMediumScreens ? "shadow-soft" : ""
+                        }`}
+                    >
+                        <SkillsLogo />
+                    </div>
                 </motion.div>
             </div>
         </section>
-    )
-}
+    );
+};
 
 export default MySkills;

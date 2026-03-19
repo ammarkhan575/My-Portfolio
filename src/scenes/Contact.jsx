@@ -1,134 +1,153 @@
-import LineGradient from "../components/LineGradient";
-import { useForm } from 'react-hook-form';
-import { motion } from 'framer-motion';
-import contact from '../assets/contact-image.jpeg';
+import { useForm } from "react-hook-form";
+import { motion } from "framer-motion";
+import contact from "../assets/contact-image.jpeg";
 
 const Contact = () => {
     const {
         register,
         trigger,
-        formState: { errors }
+        formState: { errors },
     } = useForm();
 
-    const onSubmit = async (e) => {
+    const onSubmit = async (event) => {
         const isValid = await trigger();
         if (!isValid) {
-            e.preventDefault();
-        }
+            event.preventDefault();
     }
+    };
+
     return (
-        <section id="contact" className="py-48">
-            {/* HEADING */}
+        <section id="contact" className="py-16 md:py-24">
             <motion.div
-                className="flex justify-end w-full"
+                className="mx-auto max-w-3xl text-center"
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, }}
-                transiton={{ delay: 0.2, duration: 0.2 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
                 variants={{
-                    hidden: { opacity: 0, x: -50 },
-                    visible: { opacity: 1, x: 0 }
-                }}>
-                <div>
-                    <p className="font-playfair font-semibold text-4xl">
-                        <span className="text-yellow ">CONTACT ME</span> TO GET STARTED
-                    </p>
-                    <div className="flex md:justify-end my-5">
-                        <LineGradient width="w-2/4" />
-                    </div>
-                </div>
+                    hidden: { opacity: 0, y: -24 },
+                    visible: { opacity: 1, y: 0 },
+                }}
+            >
+                <span className="section-kicker">Contact</span>
+                <h2 className="section-title mt-5">Let us build something meaningful</h2>
+                <p className="section-copy mt-5">
+                    Share your goals, timeline, and product idea. I will get back with a clear
+                    approach and next steps.
+                </p>
             </motion.div>
-            {/* FORM & IMAGE */}
-            <div className="md:flex md:justify-between gap-16 mt-5">
+
+            <div className="mt-10 grid gap-6 md:grid-cols-2 md:items-stretch">
                 <motion.div
-                    className="basis-1/2 flex justify-center"
+                    className="panel overflow-hidden"
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, }}
-                    transiton={{ duration: 0.5 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.55 }}
                     variants={{
-                        hidden: { opacity: 0, y: 50 },
-                        visible: { opacity: 1, y: 0 }
-                    }}>
-                    <img src={contact} alt="contact" />
+                        hidden: { opacity: 0, y: 22 },
+                        visible: { opacity: 1, y: 0 },
+                    }}
+                >
+                    <img
+                        src={contact}
+                        alt="Contact"
+                        className="h-full min-h-[330px] w-full object-cover"
+                    />
                 </motion.div>
+
                 <motion.div
-                    className="basis-1/2 mt-10 md:mt-0"
+                    className="panel p-6 sm:p-8"
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, }}
-                    transiton={{ delay: 0.2, duration: 0.5 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.55, delay: 0.1 }}
                     variants={{
-                        hidden: { opacity: 0, y: 50 },
-                        visible: { opacity: 1, y: 0 }
-                    }}>
+                        hidden: { opacity: 0, y: 24 },
+                        visible: { opacity: 1, y: 0 },
+                    }}
+                >
                     <form
                         target="_blank"
                         onSubmit={onSubmit}
                         action="https://formsubmit.co/ammarkhan575@gmail.com"
                         method="POST"
+                        className="space-y-4"
                     >
-                        <input className="w-full bg-blue font-semibold placeholder-opaque-black p-3"
-                            type="text"
-                            placeholder="NAME"
-                            {...register("name", {
-                                required: true,
-                                maxLength: 100
-                            })}
+                        <input type="hidden" name="_captcha" value="false" />
+                        <input
+                            type="hidden"
+                            name="_subject"
+                            value="New portfolio contact request"
                         />
-                        {
-                            errors.name && (
-                                <p className="text-red mt-1">
-                                    {errors.message.type === "required" && "This field is required."}
-                                    {errors.message.type === "maxLength" && "Max length is 100 char."}
-                                </p>
-                            )
-                        }
-                        <input className="w-full bg-blue font-semibold placeholder-opaque-black p-3 mt-5"
-                            type="text"
-                            placeholder="EMAIL"
-                            {...register("email", {
-                                required: true,
-                                pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                            })}
-                        />
-                        {errors.email && (
-                            <p className="text-red mt-1">
-                                {errors.email.type === "required" && "This field is required."}
-                                {errors.email.type === "pattern" && "Invalid email address."}
-                            </p>
-                        )}
 
-                        <textarea
-                            className="w-full bg-blue font-semibold placeholder-opaque-black p-3 mt-5"
-                            name="message"
-                            placeholder="MESSAGE"
-                            rows="4"
-                            cols="50"
-                            {...register("message", {
-                                required: true,
-                                maxLength: 2000,
-                            })}
-                        />
-                        {errors.message && (
-                            <p className="text-red mt-1">
-                                {errors.message.type === "required" &&
-                                    "This field is required."}
-                                {errors.message.type === "maxLength" &&
-                                    "Max length is 2000 char."}
-                            </p>
-                        )}
+                        <div>
+                            <input
+                                className="w-full rounded-xl border border-line bg-white px-4 py-3 text-sm font-medium text-ink outline-none transition duration-300 placeholder:text-muted focus:border-accent"
+                                type="text"
+                                placeholder="Your name"
+                                {...register("name", {
+                                    required: true,
+                                    maxLength: 100,
+                                })}
+                            />
+                            {errors.name && (
+                                <p className="mt-1 text-sm text-red-500">
+                                    {errors.name.type === "required" && "Name is required."}
+                                    {errors.name.type === "maxLength" && "Max length is 100 characters."}
+                                </p>
+                            )}
+                        </div>
+
+                        <div>
+                            <input
+                                className="w-full rounded-xl border border-line bg-white px-4 py-3 text-sm font-medium text-ink outline-none transition duration-300 placeholder:text-muted focus:border-accent"
+                                type="text"
+                                placeholder="Email address"
+                                {...register("email", {
+                                    required: true,
+                                    pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                })}
+                            />
+                            {errors.email && (
+                                <p className="mt-1 text-sm text-red-500">
+                                    {errors.email.type === "required" && "Email is required."}
+                                    {errors.email.type === "pattern" && "Please enter a valid email address."}
+                                </p>
+                            )}
+                        </div>
+
+                        <div>
+                            <textarea
+                                className="w-full rounded-xl border border-line bg-white px-4 py-3 text-sm font-medium text-ink outline-none transition duration-300 placeholder:text-muted focus:border-accent"
+                                name="message"
+                                placeholder="Tell me about your project"
+                                rows="6"
+                                {...register("message", {
+                                    required: true,
+                                    maxLength: 2000,
+                                })}
+                            />
+                            {errors.message && (
+                                <p className="mt-1 text-sm text-red-500">
+                                    {errors.message.type === "required" && "Message is required."}
+                                    {errors.message.type === "maxLength" &&
+                                        "Max length is 2000 characters."}
+                                </p>
+                            )}
+                        </div>
+
                         <button
-                            className="p-5 bg-yellow font-semibold text-deep-blue mt-5 hover:bg-red hover:text-white transition duration-500"
+                            className="w-full rounded-xl bg-ink px-6 py-3 text-sm font-bold uppercase tracking-[0.14em] text-white transition duration-300 hover:bg-accent"
                             type="submit"
                         >
-                            SEND ME A MESSAGE
+                            Send Message
                         </button>
                     </form>
                 </motion.div>
             </div>
         </section>
-    )
-}
+    );
+};
 
 export default Contact;

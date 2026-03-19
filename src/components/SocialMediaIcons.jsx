@@ -1,47 +1,57 @@
-import linkedIn from '../assets/linkedin.png';
-import facebook from '../assets/facebook.png';
-import instagram from '../assets/instagram.png';
-import twitter from '../assets/twitter.png';
+import {
+    FaFacebookF,
+    FaGithub,
+    FaInstagram,
+    FaLinkedinIn,
+    FaTwitter,
+} from "react-icons/fa";
+
+const SOCIAL_LINKS = [
+    {
+        name: "LinkedIn",
+        href: "https://www.linkedin.com/in/ammarkhan575",
+        icon: FaLinkedinIn,
+    },
+    {
+        name: "GitHub",
+        href: "https://github.com/ammarkhan575",
+        icon: FaGithub,
+    },
+    {
+        name: "Facebook",
+        href: "https://www.facebook.com/ammarkhan575",
+        icon: FaFacebookF,
+    },
+    {
+        name: "Instagram",
+        href: "https://www.instagram.com/mohdammar5757",
+        icon: FaInstagram,
+    },
+    {
+        name: "Twitter",
+        href: "https://www.x.com/mohdammar575",
+        icon: FaTwitter,
+    },
+];
+
 const SocialMediaIcons = () => {
     return (
-        <div className="flex justify-center md:justify-start my-10 gap-7">
-            <a
-                href="https://www.linkedin.com/in/ammarkhan575" 
-                target="_blank"
-                rel="noreferrer"
-                className="hover:opacity-50 transition duration-500"
-            >
-                <img src={linkedIn} alt="linkedin" />
-            </a>
-
-            <a
-                href="https://www.facebook.com/ammarkhan575" 
-                target="_blank"
-                rel="noreferrer"
-                className="hover:opacity-50 transition duration-500"
-            >
-                <img src={facebook} alt="facebook" />
-            </a>
-            
-            <a
-                href="https://www.instagram.com/mohdammar5757" 
-                target="_blank"
-                rel="noreferrer"
-                className="hover:opacity-50 transition duration-500"
-            >
-                <img src={instagram} alt="instagram" />
-            </a>
-
-            <a
-                href="https://www.x.com/mohdammar575" 
-                target="_blank"
-                rel="noreferrer"
-                className="hover:opacity-50 transition duration-500"
-            >
-                <img src={twitter} alt="twitter" />
-            </a>
+        <div className="mt-6 flex flex-wrap justify-center gap-3 md:justify-start">
+            {SOCIAL_LINKS.map(({ name, href, icon: Icon }) => (
+                <a
+                    key={name}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-line bg-white text-slate transition duration-300 hover:border-accent hover:bg-accent hover:text-white"
+                    title={name}
+                    aria-label={name}
+                >
+                    <Icon size={16} />
+                </a>
+            ))}
         </div>
-    )
-}
+    );
+};
 
 export default SocialMediaIcons;

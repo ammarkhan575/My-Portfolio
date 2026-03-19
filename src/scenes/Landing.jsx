@@ -1,95 +1,104 @@
 import useMediaQuery from "../hooks/useMediaQuery";
-import SocialMediaIcons from '../components/SocialMediaIcons';
-import { motion } from 'framer-motion';
+import SocialMediaIcons from "../components/SocialMediaIcons";
+import { motion } from "framer-motion";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import profile from '../assets/profile.png';
+import profile from "../assets/profile.png";
 import ParticlesContainer from "../components/ParticlesContainer";
 
 const Landing = ({ setSelectedPage }) => {
-    const isAboveMediumScreens = useMediaQuery('(min-width:1060px)');
+    const isAboveMediumScreens = useMediaQuery("(min-width:1060px)");
+
     return (
-        <section id="home" className="md:flex md:justify-between md:items-center md:h-full gap-16 py-10">
-            <ParticlesContainer/>
-            {/* IMAGE SECTION*/}
-            <div className="md:order-2 flex justify-center basis-3/5 z-10 mt-16 md:mt-32">
-                {isAboveMediumScreens ? (
-                    <div className="relative z-0 ml-20 before:absolute  before:rounded-t-[400px] before:w-full before:max-w-[400px] before:h-full before:border-2 before:border-blue before:z-[-1]">
-                        <img src={profile} alt="profile" className="saturate-200 transition animate-lightBounce duration-500 z-10 w-full max-w-[400px]" />
+        <section id="home" className="relative overflow-hidden py-8 md:py-16">
+            <ParticlesContainer />
+
+            <div className="relative z-10 grid gap-8 md:grid-cols-[1.05fr_0.95fr] md:items-center md:gap-10">
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.55 }}
+                    variants={{
+                        hidden: { opacity: 0, y: 25 },
+                        visible: { opacity: 1, y: 0 },
+                    }}
+                    className="panel p-7 sm:p-9 md:p-10"
+                >
+                    <span className="section-kicker">Software Engineer</span>
+
+                    <h1 className="mt-5 font-display text-4xl font-semibold leading-tight text-ink sm:text-5xl">
+                        Building dependable
+                        <span className="block text-accent">full-stack products</span>
+                    </h1>
+
+                    <p className="section-copy mt-6">
+                        I am Mohd Ammar, a full-stack engineer focused on React, NestJS, and AWS.
+                        I ship production-grade features with strong system design, performance,
+                        and developer experience in mind.
+                    </p>
+
+                    <div className="mt-8 flex flex-wrap gap-3">
+                        <AnchorLink
+                            className="rounded-full bg-ink px-6 py-3 text-sm font-bold uppercase tracking-[0.14em] text-white transition duration-300 hover:bg-accent"
+                            onClick={() => {
+                                setSelectedPage("contact");
+                            }}
+                            href="#contact"
+                        >
+                            Start a Project
+                        </AnchorLink>
+
+                        <AnchorLink
+                            className="rounded-full border border-line bg-white px-6 py-3 text-sm font-bold uppercase tracking-[0.14em] text-slate transition duration-300 hover:border-accent hover:text-accent"
+                            onClick={() => {
+                                setSelectedPage("projects");
+                            }}
+                            href="#projects"
+                        >
+                            View Projects
+                        </AnchorLink>
                     </div>
 
-                ) : (
-                    <img src={profile} alt="profile" className="hover:filter hover:saturate-200 animate-lightBounce transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px]" />
-                )}
-            </div>
+                    <div className="mt-8 border-t border-line pt-2">
+                        <SocialMediaIcons />
+                    </div>
+                </motion.div>
 
-            {/* MAIN SECTION */}
-            <div className="z-30 basis-2/5 mt-12 md:mt-32 ">
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, }}
-                    transiton={{ duration: 0.5 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.1 }}
                     variants={{
-                        hidden: { opacity: 0, x: -50 },
-                        visible: { opacity: 1, x: 0 }
+                        hidden: { opacity: 0, y: 30 },
+                        visible: { opacity: 1, y: 0 },
                     }}
+                    className="relative"
                 >
-                    <p className="text-6xl font-playfair z-10 text-center md:text-start">
-                        Mohd {""}
-                        <span className="xs:relative xs:text-deep-blue xs:font-semibold z-20 xs:before:content-brush before:absolute before:-left-[25px] before:-top-[70px] before:z-[-1]"
-                        >
-                            Ammar
-                        </span>
-                    </p>
-                    <p className="mt-10 mb-7 text-sm text-center md:text-start">
-                        Hello I am MERN Developer who likes to build real life projects.
-                    </p>
-                </motion.div>
+                    <div className="relative mx-auto w-full max-w-[430px] animate-floatSlow">
+                        <div className="absolute -inset-4 rounded-[2rem] bg-accent-stripe blur-xl" />
 
-                {/* CALL TO ACTION */}
-                <motion.div
-                    className="flex justify-center mt-5 md:justify-start"
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, }}
-                    transiton={{ delay: 0.2, duration: 0.2 }}
-                    variants={{
-                        hidden: { opacity: 0, x: -50 },
-                        visible: { opacity: 1, x: 0 }
-                    }}>
-                    <AnchorLink
-                        className="bg-gradient-rainblue text-deep-blue rounded-sm py-3 px-7 font-semibold hover:bg-blue hover:text-white transition duration-500"
-                        onClick={() => { setSelectedPage('contact') }}
-                        href="#contact">
-                        Contact Me
-                    </AnchorLink>
-
-                    <AnchorLink
-                        className="rounded-r-sm bg-gradient-rainblue py-0.5 pr-0.5"
-                        onClick={() => { setSelectedPage('contact') }}
-                        href="#contact">
-                        <div className="bg-deep-blue hover:text-red transition duration-500 w-full h-full flex items-center justify-center font-playfair px-10">
-                            Let's talk.
+                        <div className="panel relative overflow-hidden rounded-[2rem] border border-white/75 p-4 sm:p-5">
+                            <img
+                                src={profile}
+                                alt="Mohd Ammar"
+                                className="h-[430px] w-full rounded-[1.6rem] object-cover object-top sm:h-[500px]"
+                            />
                         </div>
-                    </AnchorLink>
-                </motion.div>
 
-                <motion.div
-                    className="flex justify-center mt-5 md:justify-start"
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, }}
-                    transiton={{ delay: 0.2, duration: 0.2 }}
-                    variants={{
-                        hidden: { opacity: 0, x: -50 },
-                        visible: { opacity: 1, x: 0 }
-                    }}>
-
-                    <SocialMediaIcons />
+                        {isAboveMediumScreens && (
+                            <div className="absolute -left-9 bottom-8 rounded-2xl border border-line bg-white px-4 py-3 shadow-soft">
+                                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">
+                                    Experience
+                                </p>
+                                <p className="mt-1 font-display text-lg font-bold text-ink">3+ Years</p>
+                            </div>
+                        )}
+                    </div>
                 </motion.div>
             </div>
         </section>
-    )
-}
+    );
+};
 
 export default Landing;

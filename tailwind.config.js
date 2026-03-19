@@ -5,51 +5,44 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "deep-blue": "#010026",
-        blue: "#2CBCE9",
-        red: "#DC4492",
-        yellow: "#FDCC49",
-        grey: "#ededed",
-        "dark-grey": "#757575",
-        "opaque-black": "rgba(0,0,0,0.35)",
+        ink: "#0f172a",
+        slate: "#334155",
+        muted: "#64748b",
+        mist: "#f4f8fb",
+        paper: "#ffffff",
+        line: "#dbe4ec",
+        accent: "#0f766e",
+        "accent-soft": "#14b8a6",
+        sun: "#f59e0b",
+        "sun-soft": "#fde68a",
       },
       animation: {
-        lightBounce: 'lightBounce 3s ease-in-out infinite',
-        colorPulse: 'colorPulse 2s ease infinite',
-        spinSlow: 'spin 3s linear infinite'
+        floatSlow: "floatSlow 6s ease-in-out infinite",
       },
       keyframes: {
-        lightBounce: {
-          '0%, 100%': { transform: 'translateY(-10px)' },
-          '50%': { transform: 'translateY(10px)' },
+        floatSlow: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-8px)" },
         },
-        colorPulse:{
-          '0%, 100%':{ filter:'saturate(0%)'},
-          '50%':{ filter:'saturate(100%)'}
-        }
       },
-      backgroundImage: (theme) => ({
-        "gradient-rainbow":
-          "linear-gradient(81.66deg, #00B5EE 7.21%, #FF45A4 45.05%, #FFBA00 78.07%)",
-
-        "gradient-rainblue":
-          "linear-gradient(90deg, #24CBFF 14.53%, #FC59FF 69.36%, #FFBD0C 117.73%)",
-      }),
+      boxShadow: {
+        soft: "0 20px 50px -28px rgba(15, 23, 42, 0.45)",
+      },
+      backgroundImage: {
+        "accent-stripe":
+          "linear-gradient(120deg, rgba(15,118,110,0.18), rgba(245,158,11,0.12))",
+      },
       fontFamily: {
-        playfair: ["Playfair Display", "serif"],
-        opensans: ["Open Sans", "sans-serif"],
-      },
-      content: {
-        brush: "url('./assets/brush.png')",
-        person1: "url('./assets/person-1.png')",
-        person2: "url('./assets/person-2.png')",
-        person3: "url('./assets/person-3.png')",
+        display: ["Sora", "sans-serif"],
+        body: ["Manrope", "sans-serif"],
       },
     },
     screens: {
       xs: "480px",
       sm: "768px",
       md: "1060px",
+      lg: "1280px",
+      xl: "1536px",
     },
   },
   plugins: [],
