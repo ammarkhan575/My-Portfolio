@@ -17,7 +17,7 @@ import {
   SiTypescript,
 } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
-import { FaBolt, FaNetworkWired, FaSitemap, FaTachometerAlt } from "react-icons/fa";
+import { FaBolt, FaNetworkWired, FaSitemap } from "react-icons/fa";
 
 const SKILL_ICONS = [
   { name: "PHP", icon: SiPhp, color: "text-indigo-600" },

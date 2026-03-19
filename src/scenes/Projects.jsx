@@ -1,61 +1,61 @@
 import { motion } from "framer-motion";
-import project1 from "../assets/project-1.jpeg";
-import project2 from "../assets/project-2.jpeg";
-import project3 from "../assets/project-3.jpeg";
-import project4 from "../assets/project-4.jpeg";
-import project5 from "../assets/project-5.jpeg";
-import project6 from "../assets/project-6.jpeg";
-import project7 from "../assets/project-7.jpeg";
-import project8 from "../assets/project-8.png";
 
 const PROJECTS = [
     {
-        title: "Squareboat Website",
-        subtitle:
+        title: "Squareboat Website Migration",
+        summary:
             "Migrated from Laravel to NestJS with AWS S3/Lambda integration for automated media processing and multi-resolution optimization.",
-        image: project1,
+        focus: "Platform Migration",
+        stack: ["NestJS", "Laravel", "AWS S3", "AWS Lambda", "MySQL"],
     },
     {
         title: "Compile-X",
-        subtitle:
+        summary:
             "Built an online code compiler for 40+ languages using Judge0 and Monaco Editor with real-time execution feedback.",
-        image: project2,
+        focus: "Developer Tooling",
+        stack: ["React", "Monaco Editor", "Judge0 API", "Tailwind CSS"],
     },
     {
         title: "Job Portal",
-        subtitle:
+        summary:
             "Delivered a multi-role recruitment platform with Redis-backed security, RTK Query data flows, and automated alerts.",
-        image: project3,
+        focus: "Product Platform",
+        stack: ["React", "NestJS", "MySQL", "Redis", "RTK Query"],
     },
     {
         title: "Referral System",
-        subtitle:
+        summary:
             "Automated referral payouts and ledger generation for an education platform to reduce manual finance overhead.",
-        image: project4,
+        focus: "Business Automation",
+        stack: ["NestJS", "MySQL", "Ledger Logic", "Admin Workflows"],
     },
     {
         title: "HRMS Platform",
-        subtitle:
+        summary:
             "Migrated work log drafts from local storage to backend persistence for seamless cross-device continuity.",
-        image: project5,
+        focus: "Product Enhancement",
+        stack: ["React", "NestJS", "State Management", "API Design"],
     },
     {
         title: "Performance Optimization",
-        subtitle:
+        summary:
             "Resolved N+1 query bottlenecks and improved critical API latency with optimized query and indexing strategy.",
-        image: project6,
+        focus: "Scalability",
+        stack: ["SQL", "Query Optimization", "Indexing", "Backend APIs"],
     },
     {
         title: "Automated EL System",
-        subtitle:
+        summary:
             "Removed manual HR intervention by automating earned leave calculations and reducing operational errors.",
-        image: project7,
+        focus: "Workflow Automation",
+        stack: ["NestJS", "Business Rules", "Data Validation"],
     },
     {
         title: "Email Queue System",
-        subtitle:
+        summary:
             "Implemented Redis-backed async email delivery reducing synchronous API response time from seconds to milliseconds.",
-        image: project8,
+        focus: "Queue Architecture",
+        stack: ["Redis", "Queues", "Async Processing", "Node.js"],
     },
 ];
 
@@ -73,24 +73,43 @@ const projectVariant = {
     visible: { opacity: 1, y: 0 },
 };
 
-const Project = ({ title, subtitle, image }) => {
+const Project = ({ title, summary, focus, stack }) => {
     return (
         <motion.article
             variants={projectVariant}
-            className="panel group overflow-hidden border border-white/90"
+            className="panel group relative overflow-hidden border border-line/90 bg-white/90 p-6 sm:p-7 transition duration-300 hover:-translate-y-1 hover:border-accent/35 hover:shadow-soft"
         >
-            <div className="relative h-52 overflow-hidden">
-                <img
-                    className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                    src={image}
-                    alt={title}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/20 to-transparent" />
-            </div>
+            <div className="pointer-events-none absolute -right-10 -top-10 h-24 w-24 rounded-full bg-accent-soft/15 blur-2xl" />
 
-            <div className="p-5 sm:p-6">
-                <h3 className="font-display text-xl font-semibold text-ink">{title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate">{subtitle}</p>
+            <div className="relative z-10">
+                <p className="inline-flex rounded-full border border-line bg-mist px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-muted">
+                    Case Study
+                </p>
+
+                <h3 className="mt-4 font-display text-2xl font-semibold leading-tight text-ink">
+                    {title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-slate md:text-base">{summary}</p>
+
+                <div className="mt-5 flex flex-wrap gap-2">
+                    {stack.map((tech) => (
+                        <span
+                            key={tech}
+                            className="rounded-full border border-line bg-white px-2.5 py-1 text-[11px] font-semibold text-slate"
+                        >
+                            {tech}
+                        </span>
+                    ))}
+                </div>
+
+                <div className="mt-6 flex items-center justify-between border-t border-line pt-4">
+                    <p className="text-xs font-semibold uppercase tracking-[0.08em] text-muted">
+                        Focus <span className="text-slate">{focus}</span>
+                    </p>
+                    <span className="rounded-full bg-accent/10 px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.1em] text-accent">
+                        Production
+                    </span>
+                </div>
             </div>
         </motion.article>
     );
@@ -146,8 +165,8 @@ const Projects = () => {
                             Languages
                         </span>
                         <span>
-                            <strong className="block font-display text-2xl text-white">ms</strong>
-                            Queue Latency
+                            <strong className="block font-display text-2xl text-white">8+</strong>
+                            Deliveries
                         </span>
                     </div>
                 </motion.article>
@@ -156,8 +175,9 @@ const Projects = () => {
                     <Project
                         key={project.title}
                         title={project.title}
-                        subtitle={project.subtitle}
-                        image={project.image}
+                        summary={project.summary}
+                        focus={project.focus}
+                        stack={project.stack}
                     />
                 ))}
             </motion.div>

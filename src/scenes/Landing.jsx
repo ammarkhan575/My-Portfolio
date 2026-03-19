@@ -92,7 +92,7 @@ const Landing = ({ setSelectedPage }) => {
                                 <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">
                                     Experience
                                 </p>
-                                <p className="mt-1 font-display text-lg font-bold text-ink">3+ Years</p>
+                                <p className="mt-1 font-display text-lg font-bold text-ink">2+ Years</p>
                             </div>
                         )}
                     </div>
