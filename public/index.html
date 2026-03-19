@@ -2,43 +2,106 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/favicon.svg" />
+    <link rel="alternate icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#0f766e" />
+    <meta name="author" content="Mohd Ammar" />
+    <meta name="application-name" content="Mohd Ammar Portfolio" />
+    <meta name="apple-mobile-web-app-title" content="Mohd Ammar Portfolio" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Mohd Ammar is a full-stack software engineer specializing in React, NestJS, TypeScript, and AWS. Explore projects, skills, and contact details."
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <meta
+      name="keywords"
+      content="Mohd Ammar, Full-Stack Developer, Software Engineer, React, NestJS, TypeScript, AWS, Portfolio"
+    />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <link rel="canonical" href="%PUBLIC_URL%/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Mohd Ammar Portfolio" />
+    <meta
+      property="og:title"
+      content="Mohd Ammar | Full-Stack Software Engineer"
+    />
+    <meta
+      property="og:description"
+      content="Portfolio of Mohd Ammar, a full-stack engineer building scalable products with React, NestJS, and AWS."
+    />
+    <meta property="og:url" content="%PUBLIC_URL%/" />
+    <meta property="og:image" content="%PUBLIC_URL%/logo512.png" />
+    <meta property="og:image:alt" content="Mohd Ammar Portfolio" />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Mohd Ammar | Full-Stack Software Engineer"
+    />
+    <meta
+      name="twitter:description"
+      content="Explore projects, skills, and contact details for Mohd Ammar, full-stack engineer."
+    />
+    <meta name="twitter:image" content="%PUBLIC_URL%/logo512.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "name": "Mohd Ammar",
+            "url": "%PUBLIC_URL%/",
+            "jobTitle": "Full-Stack Software Engineer",
+            "description": "Full-stack engineer specializing in React, NestJS, TypeScript, and AWS.",
+            "image": "%PUBLIC_URL%/logo512.png",
+            "sameAs": [
+              "https://www.linkedin.com/in/ammarkhan575",
+              "https://github.com/ammarkhan575",
+              "https://www.facebook.com/ammarkhan575",
+              "https://www.instagram.com/mohdammar5757",
+              "https://www.x.com/mohdammar575"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "name": "Mohd Ammar Portfolio",
+            "url": "%PUBLIC_URL%/",
+            "inLanguage": "en",
+            "publisher": {
+              "@type": "Person",
+              "name": "Mohd Ammar"
+            }
+          },
+          {
+            "@type": "WebPage",
+            "name": "Mohd Ammar Portfolio",
+            "url": "%PUBLIC_URL%/",
+            "description": "Portfolio website showcasing full-stack projects, skills, and contact information."
+          }
+        ]
+      }
+    </script>
+
+    <title>Mohd Ammar | Full-Stack Software Engineer</title>
     <link rel="stylesheet" href="./output.css">
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>
