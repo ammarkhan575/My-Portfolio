@@ -3,14 +3,20 @@ import { motion } from "framer-motion";
 import SkillsLogo from "../components/SkillsLogo";
 
 const STACK = [
-    "React",
+    "PHP",
+    "JavaScript",
     "NestJS",
+    "Laravel",
     "TypeScript",
-    "Go",
-    "AWS",
-    "Redis",
+    "MySQL",
     "PostgreSQL",
     "System Design",
+    "Caching",
+    "Queues",
+    "Rate Limiting",
+    "Docker",
+    "Git",
+    "Redis (Basic)",
 ];
 
 const MySkills = () => {
@@ -38,9 +44,9 @@ const MySkills = () => {
                     </h2>
 
                     <p className="section-copy mt-6">
-                        I focus on practical architecture, clean APIs, and product velocity. My
-                        stack is centered around modern TypeScript services, scalable data models,
-                        and robust frontend experiences.
+                        I build backend-heavy products with clean API design, strong data modeling,
+                        and practical scalability patterns. The stack below reflects my current
+                        day-to-day technologies and engineering concepts.
                     </p>
 
                     <div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-3">

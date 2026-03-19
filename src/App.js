@@ -4,6 +4,7 @@ import Navbar from "./scenes/Navbar";
 import DotGroup from "./scenes/DotGroup";
 import Landing from "./scenes/Landing";
 import MySkills from "./scenes/MySkills";
+import Experience from "./scenes/Experience";
 import Projects from "./scenes/Projects";
 import Contact from "./scenes/Contact";
 import Footer from "./scenes/Footer";
@@ -55,6 +56,10 @@ function App() {
 
         <div className="section-shell">
           <MySkills />
+        </div>
+
+        <div className="section-shell">
+          <Experience />
         </div>
 
         <div className="section-shell">

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import useMediaQuery from "../hooks/useMediaQuery";
 
-const NAV_ITEMS = ["Home", "Skills", "Projects", "Contact"];
+const NAV_ITEMS = ["Home", "Skills", "Experience", "Projects", "Contact"];
 
 const Link = ({ page, selectedPage, setSelectedPage, onClick }) => {
     const lowerCasePage = page.toLowerCase();

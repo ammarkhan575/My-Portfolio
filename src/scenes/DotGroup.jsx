@@ -1,6 +1,6 @@
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
-const DOTS = ["home", "skills", "projects", "contact"];
+const DOTS = ["home", "skills", "experience", "projects", "contact"];
 
 const DotGroup = ({ selectedPage, setSelectedPage }) => {
   const selectedStyles =

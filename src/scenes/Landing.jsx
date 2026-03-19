@@ -32,9 +32,10 @@ const Landing = ({ setSelectedPage }) => {
                     </h1>
 
                     <p className="section-copy mt-6">
-                        I am Mohd Ammar, a full-stack engineer focused on React, NestJS, and AWS.
-                        I ship production-grade features with strong system design, performance,
-                        and developer experience in mind.
+                        I am Mohd Ammar, a full-stack engineer focused on building reliable
+                        products across domains and technologies. I ship production-grade
+                        features with strong system design, performance, and developer
+                        experience in mind.
                     </p>
 
                     <div className="mt-8 flex flex-wrap gap-3">
